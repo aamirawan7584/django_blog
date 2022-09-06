@@ -1,21 +1,8 @@
 from django.shortcuts import render
+from .models import Post
 
-posts = [
-
-    {
-        'author':'aamir',
-        'title':'Blog Post 1',
-        'content':'First post content',
-        'date_posted':'August 17, 2022'
-    },
-    {
-        'author':'aamir',
-        'title':'Blog Post 2',
-        'content':'First post content',
-        'date_posted':'August 17, 2022'
-    },
-]
 def home(request):
+    posts = Post.objects.all()
     context = {
         'posts':posts
     }
